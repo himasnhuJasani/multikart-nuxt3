@@ -15,7 +15,7 @@
           </li>
           <li v-for="(menuItem, index) in menulist" :key="index" :class="menuItem.megamenu ? 'mega-menu' : 'dropdown'">
             <a href="#" class="nav-link" @click="setActive(menuItem.title)">
-              {{$t(menuItem.title)}}
+              {{(menuItem.title)}}
               <span class="sub-arrow" v-if="menuItem.children || menuItem.megamenu"></span>
             </a>
             <ul class="nav-submenu" :class="{ opensubmenu: isActive(menuItem.title) }" v-if="menuItem.children">

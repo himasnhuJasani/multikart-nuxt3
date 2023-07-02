@@ -64,16 +64,6 @@
           </div>
           <div class="show-div setting">
             <h6>Language</h6>
-            <ul class="list-inline">
-              <li>
-                <Nuxt-link v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)" >
-
-          {{ locale.name }}
-          
-        </Nuxt-link>
-              </li>
-             
-            </ul>
             <h6>currency</h6>
             <ul class="list-inline">
               <li>
@@ -206,15 +196,6 @@ export default {
       useProductStore().changeCurrency2(this.currencyChange)
     }
   },
- setup(){
-  const { locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-const availableLocales = computed(() => {
-  return (locales.value).filter(i => i.code !== locale.value)
-})
-return{
-  switchLocalePath,availableLocales
-}
- }
+
 }
 </script>
